@@ -5,26 +5,28 @@
 }
 
 body {
-  background-color: rgb(230, 185, 166);
+  background: linear-gradient(135deg, #f9f7f7, #dbe2ef);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 #heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 120px;
   width: 100%;
-  background-color: rgb(238, 237, 235);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #3f72af;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #heading h1 {
-  font-size: 2.5rem;
-  color: rgb(47, 54, 69);
+  font-size: 3rem;
+  color: #f9f7f7;
+  text-shadow: 1px 1px 2px #112d4e;
 }
 
 .game-container {
@@ -41,35 +43,50 @@ body {
 }
 
 .grid {
-  background-color: rgb(147, 145, 133);
+  background-color: #f9f7f7;
   height: 100px;
   width: 100px;
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 3px solid #3f72af;
+  border-radius: 12px;
   font-size: 60px;
-  color: rgb(47, 54, 69);
+  color: #3f72af;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s;
 }
 
-.grid:hover {
+.grid:hover:not(:disabled) {
+  background-color: #dbe2ef;
   transform: scale(1.05);
+}
+
+.grid:disabled {
+  background-color: #eeeeee;
+  cursor: not-allowed;
 }
 
 #reset {
   margin-top: 30px;
   height: 50px;
-  width: 120px;
-  border-radius: 8px;
-  background-color: rgb(47, 54, 69);
+  width: 140px;
+  border-radius: 10px;
+  background-color: #112d4e;
   color: white;
   font-size: 18px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 #reset:hover {
-  background-color: rgb(80, 88, 105);
+  background-color: #3f72af;
+  transform: scale(1.05);
 }
 
+#msg {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #112d4e;
+  text-shadow: 0.5px 0.5px 1px #888;
+}
